@@ -4,10 +4,10 @@ A web application that simply shows the current time in Moscow.
 
 There are two versions:
 
-* in Python (using [Starlette](starlette.io) as the backend)  
+* in Python (using [Starlette](https://starlette.io) as the backend)  
   See the [development decisions](./app_python/PYTHON.md) for the Python project.
-* in TypeScript (using [Sapper](sapper.svelte.dev) as the renderer for a static webpage)  
-  See the [development decisions](app_ts/TYPESCRIPT.md) for the TypeScript project.
+* in TypeScript (using [Sapper](https://sapper.svelte.dev) as the renderer for a static webpage)  
+  See the [development decisions](./app_ts/TYPESCRIPT.md) for the TypeScript project.
 
 ## Credits
 
