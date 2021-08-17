@@ -21,7 +21,7 @@
   changes upon updates, but the security fixes and new features still get installed.
 - The lockfile is checked into version control to ensure reproducible builds
   locally and in CI.
-- Two running scripts are available: to run the app in development 
+- Two running scripts are available: to run the app in development
   and production modes.
 
 ## Linting
