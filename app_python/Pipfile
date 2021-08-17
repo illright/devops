@@ -4,8 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+sanic = ">= 21.6.2, < 22.0.0"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+dev = "python main.py"
+start = "sanic main.app"
+lint = "pylint main.py"

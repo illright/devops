@@ -1,0 +1,28 @@
+{
+  "name": "devops",
+  "private": true,
+  "scripts": {
+    "lint-md": "markdownlint '**/*.md' --ignore './**/node_modules/**'",
+    "lint-md:fix": "markdownlint '**/*.md' --ignore './**/node_modules/**' --fix",
+    "lint-format": "prettier --check .",
+    "lint-format:fix": "prettier --write .",
+    "lint": "pnpm lint-md && pnpm lint-format",
+    "lint:fix": "pnpm lint-md:fix && pnpm lint-format:fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illright/devops.git"
+  },
+  "author": "Lev Chelyadinov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/illright/devops/issues"
+  },
+  "homepage": "https://github.com/illright/devops",
+  "devDependencies": {
+    "markdownlint": "^0.23.1",
+    "markdownlint-cli": "^0.28.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-svelte": "^2.3.1"
+  }
+}
