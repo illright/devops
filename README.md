@@ -35,6 +35,11 @@ command from the `app_ts/` directory:
 pnpm lint
 ```
 
+## Docker images
+
+[![Python container](https://img.shields.io/docker/image-size/illright/devops_lab1_python/1.0.0?label=Python%20container)](https://hub.docker.com/repository/docker/illright/devops_lab1_python)
+[![TypeScript container](https://img.shields.io/docker/image-size/illright/devops_lab1_ts/1.0.0?label=TypeScript%20container)](https://hub.docker.com/repository/docker/illright/devops_lab1_ts)
+
 ## Credits
 
 This project is created by Lev Chelyadinov (B18-SE-01).
