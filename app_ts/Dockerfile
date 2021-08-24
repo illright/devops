@@ -17,10 +17,9 @@ RUN pnpm build
 
 FROM node:16-alpine
 
-RUN adduser -D runner && chown -R runner /app
-
 RUN mkdir -p /app
 WORKDIR /app
+RUN adduser -D runner && chown -R runner /app
 
 COPY --from=builder /app/public public
 COPY --from=builder /app/package.json .

@@ -8,3 +8,4 @@
 - The parts of the Dockerfile that rarely change are pushed up
   to enable successful caching of layers
 - A running command is available in every Dockerfile
+- The images run from a non-root user

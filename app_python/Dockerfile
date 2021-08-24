@@ -1,9 +1,8 @@
 FROM python:3-alpine
 
-RUN adduser -D runner && chown -R runner /app
-
 RUN mkdir -p /app
 WORKDIR /app
+RUN adduser -D runner && chown -R runner /app
 
 RUN apk add build-base --no-cache
 
