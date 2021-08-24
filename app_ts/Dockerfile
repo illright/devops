@@ -17,6 +17,8 @@ RUN pnpm build
 
 FROM node:16-alpine
 
+RUN adduser -D runner && chown -R runner /app
+
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -27,4 +29,5 @@ RUN npm install --omit dev
 
 EXPOSE 3000
 
+USER runner
 CMD ["npm", "start", "--", "--port", "3000", "--host", "0.0.0.0"]

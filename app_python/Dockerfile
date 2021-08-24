@@ -1,5 +1,7 @@
 FROM python:3-alpine
 
+RUN adduser -D runner && chown -R runner /app
+
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -11,6 +13,7 @@ RUN pip install pipenv && pipenv install --system
 
 EXPOSE 3000
 
+USER runner
 CMD ["pipenv", "run", "start", "--host=0.0.0.0", "--port=3000"]
 
 COPY main.py /app/
