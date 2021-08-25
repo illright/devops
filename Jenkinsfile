@@ -8,11 +8,13 @@ pipeline {
                     cd app_python
                     pipenv install --deploy --dev
                 '''
-                parallel 'linting':{
-                    sh 'pipenv run lint'
-                }, 'testing':{
-                    sh 'pipenv run test'
-                }
+            }
+        }
+        stage('main') {
+            parallel 'linting':{
+                sh 'pipenv run lint'
+            }, 'testing':{
+                sh 'pipenv run test'
             }
         }
     }
