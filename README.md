@@ -42,6 +42,14 @@ pnpm lint
 
 Both containers serve the applications on `0.0.0.0:3000`.
 
+## Unit tests
+
+The Python application contains a test suite. You may run it with:
+
+```shell
+pipenv run test
+```
+
 ## Authors
 
 This project is created by Lev Chelyadinov (B18-SE-01).
