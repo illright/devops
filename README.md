@@ -1,5 +1,7 @@
 # DevOps Lab 1
 
+[![Lint and test on pushes](https://github.com/illright/devops/actions/workflows/lint-test-on-push.yaml/badge.svg)](https://github.com/illright/devops/actions/workflows/lint-test-on-push.yaml)
+
 A web application that simply shows the current time in Moscow.
 
 There are two versions:
