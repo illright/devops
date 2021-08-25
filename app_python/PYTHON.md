@@ -32,3 +32,9 @@
 ## Readme
 
 - The README contains the instructions for running the application.
+
+## Testing
+
+- The tests are written with Pytest
+- The Pipfile contains a script to run tests
+- The tests are asynchronous, as is the application

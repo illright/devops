@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 sanic = ">= 21.6.2, < 22.0.0"
+pytest = "*"
+pytest-sanic = "*"
 
 [dev-packages]
 pylint = "*"
@@ -16,3 +18,4 @@ python_version = "3.9"
 dev = "python main.py"
 start = "sanic main.app"
 lint = "pylint main.py"
+test = "pytest tests.py"
