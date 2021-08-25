@@ -34,11 +34,14 @@ jobs:
 
       - name: Install dependencies 🧰
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
+        working-directory: app_python
         run: |
           pipenv install --deploy --dev
 
       - name: Lint 🔬
+        working-directory: app_python
         run: pipenv run lint
 
       - name: Test 🔬
+        working-directory: app_python
         run: pipenv run test
