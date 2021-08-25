@@ -11,10 +11,15 @@ pipeline {
             }
         }
         stage('main') {
-            parallel 'linting':{
-                sh 'pipenv run lint'
-            }, 'testing':{
-                sh 'pipenv run test'
+            steps {
+                parallel (
+                    'linting': {
+                        sh 'pipenv run lint'
+                    }, 
+                    'testing': {
+                        sh 'pipenv run test'
+                    }
+                )
             }
         }
     }
