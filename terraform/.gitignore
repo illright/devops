@@ -1,3 +1,2 @@
-*
-!*.tf
-!.gitignore
+.terraform/*
+virtualbox.box
