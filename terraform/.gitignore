@@ -1,2 +1,2 @@
 .terraform/*
-virtualbox.box
+terraform.tfstate.backup
