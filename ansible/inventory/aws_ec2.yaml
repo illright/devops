@@ -1,0 +1,10 @@
+# Fetch the inventory from a list of AWS EC2 instances.
+plugin: aws_ec2
+
+# Only search for instances in N. Virginia.
+regions:
+  - us-east-1
+
+# Select all instances that are set up to be controlled by Ansible.
+filters:
+  tag:ControlledBy: ansible
