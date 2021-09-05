@@ -1,8 +1,4 @@
-version: "3.3"
-
 services:
   app_ts:
-    build:
-      context: app_ts
-    ports:
-      - 80:3000
+    image: illright/devops_lab1_ts:1.0.1
+    ports: [80:3000]
