@@ -1,0 +1,4 @@
+services:
+  app_ts:
+    image: illright/devops_lab1_ts:1.0.1
+    ports: [80:3000]

@@ -49,6 +49,7 @@ Install (or verify the presence of) these Python packages:
 Install (or verify the presence of) these Ansible packages:
 
 - `ansible-galaxy collection install amazon.aws`
+- `ansible-galaxy collection install community.docker`
 - `ansible-galaxy install geerlingguy.docker`
 
 Set the following environment variables:
