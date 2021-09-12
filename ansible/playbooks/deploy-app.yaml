@@ -1,4 +1,4 @@
-- name: Update 
+- name: Update
   hosts: all
   remote_user: ubuntu
   become: yes

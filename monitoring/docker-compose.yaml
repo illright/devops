@@ -8,6 +8,8 @@ services:
       driver: json-file
       options:
         tag: "{{.ImageName}}|{{.Name}}"
+        max-size: "100m"
+        max-file: 3
 
   app_ts:
     image: illright/devops_lab1_ts:1.0.1
@@ -18,6 +20,8 @@ services:
       driver: json-file
       options:
         tag: "{{.ImageName}}|{{.Name}}"
+        max-size: "100m"
+        max-file: 3
 
   grafana:
     image: grafana/grafana:latest
@@ -43,6 +47,22 @@ services:
     command: -config.file=/etc/loki.config.yaml
     networks:
       - monitoring.network
+    
+  prometheus:
+    image: prom/prometheus:latest
+    ports: [9090:9090]
+    volumes:
+      - ./prometheus.config.yaml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    networks:
+      - monitoring.network
+    logging:
+        driver: json-file
+        options:
+          tag: '{{.ImageName}}|{{.Name}}'
+          max-size: "100m"
+          max-file: 3
 
 networks:
   monitoring.network:
