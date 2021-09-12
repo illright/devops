@@ -1,0 +1,50 @@
+services:
+  app_python:
+    image: illright/devops_lab1_python:1.0.1
+    ports: [8000:3000]
+    networks:
+      - monitoring.network
+    logging:
+      driver: json-file
+      options:
+        tag: "{{.ImageName}}|{{.Name}}"
+
+  app_ts:
+    image: illright/devops_lab1_ts:1.0.1
+    ports: [8001:3000]
+    networks:
+      - monitoring.network
+    logging:
+      driver: json-file
+      options:
+        tag: "{{.ImageName}}|{{.Name}}"
+
+  grafana:
+    image: grafana/grafana:latest
+    ports: [3000:3000]
+    networks:
+      - monitoring.network
+
+  promtail:
+    image: grafana/promtail:latest
+    ports: [9080:9080]
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./promtail.config.yaml:/etc/promtail/promtail.config.yaml
+    command: "-config.file=/etc/promtail/promtail.config.yaml"
+    networks:
+      - monitoring.network
+
+  loki:
+    image: grafana/loki:latest
+    ports: [3100:3100]
+    volumes:
+      - ./loki.config.yaml:/etc/loki.config.yaml
+    command: -config.file=/etc/loki.config.yaml
+    networks:
+      - monitoring.network
+
+networks:
+  monitoring.network:
+    ipam:
+      driver: default
