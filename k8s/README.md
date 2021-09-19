@@ -1,4 +1,4 @@
-# Kubernetes report
+# Kubernetes lab report
 
 Note: both the service and the deployment can be found in the respective app's YAML config in this directory.
 
@@ -49,3 +49,21 @@ A means of ensuring that every single node in a cluster has a particular pod run
 ### Persistent volume
 
 An abstraction over a storage medium (can be anything from a local drive to a cloud-based store) that specifies the properties of that storage (its size, access control, access speed, etc.). The applications can then persist their data in these volumes by claiming them with Persistent Volume Claims.
+
+# Helm lab report
+
+```
+❭ kubectl get pods,svc
+NAME                                    READY   STATUS    RESTARTS   AGE
+pod/app-python-chart-7db99895c7-g26v9   1/1     Running   0          4m10s
+
+NAME                       TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/app-python-chart   LoadBalancer   10.104.2.225   <pending>     80:30000/TCP   4m10s
+service/kubernetes         ClusterIP      10.96.0.1      <none>        443/TCP        26h
+```
+
+## Helm concepts
+
+### Library Charts
+
+Helm packages that contain templates and reusable blocks, but no complete applications or deployment configurations. As such, library charts cannot be deployed. Library charts are frequently used to factor out common pieces of the chart configuration into a separate package to avoid repetition.
