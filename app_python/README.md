@@ -1,5 +1,7 @@
 # DevOps Lab 1 – Python version
 
+Now with a visits counter!
+
 ## Running the application
 
 Ensure you have Python 3.9 and [Pipenv](https://pipenv.pypa.io/en/latest/) installed.
