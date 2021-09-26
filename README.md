@@ -90,7 +90,7 @@ pnpm lint
 
 ## Docker images
 
-[![Python container](https://img.shields.io/docker/image-size/illright/devops_lab1_python/1.0.1?label=Python%20container)](https://hub.docker.com/r/illright/devops_lab1_python)
+[![Python container](https://img.shields.io/docker/image-size/illright/devops_lab1_python/1.1.1?label=Python%20container)](https://hub.docker.com/r/illright/devops_lab1_python)
 [![TypeScript container](https://img.shields.io/docker/image-size/illright/devops_lab1_ts/1.0.1?label=TypeScript%20container)](https://hub.docker.com/r/illright/devops_lab1_ts)
 
 Both containers serve the applications on `0.0.0.0:3000`.
