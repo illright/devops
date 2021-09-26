@@ -29,3 +29,16 @@ spec:
             httpGet:
               path: /
               port: http
+          env:
+            - name: SECRET_VALUE
+              valueFrom:
+                secretKeyRef:
+                  name: app-python-secret
+                  key: secretValue
+          resources:
+            limits:
+              cpu: 1
+              memory: 200M
+            requests:
+              cpu: 200m
+              memory: 10M
