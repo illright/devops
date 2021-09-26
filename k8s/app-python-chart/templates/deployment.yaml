@@ -42,3 +42,11 @@ spec:
             requests:
               cpu: 200m
               memory: 10M
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config.json
+              subPath: data.json
+      volumes:
+        - name: config-volume
+          configMap:
+            name: app-python-configmap
