@@ -1,10 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "app-python-chart.fullname" . }}
   labels:
     {{- include "app-python-chart.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "app-python-chart.fullname" . }}
+  podManagementPolicy: Parallel
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
@@ -29,24 +31,14 @@ spec:
             httpGet:
               path: /
               port: http
-          env:
-            - name: SECRET_VALUE
-              valueFrom:
-                secretKeyRef:
-                  name: app-python-secret
-                  key: secretValue
-          resources:
-            limits:
-              cpu: 1
-              memory: 200M
-            requests:
-              cpu: 200m
-              memory: 10M
           volumeMounts:
-            - name: config-volume
-              mountPath: /config.json
-              subPath: data.json
-      volumes:
-        - name: config-volume
-          configMap:
-            name: app-python-configmap
+            - name: data-volume
+              mountPath: {{ .Values.appData.path }}
+  volumeClaimTemplates:
+    - metadata:
+        name: data-volume
+      spec:
+        accessModes: [ "ReadWriteMany" ]
+        resources:
+          requests:
+            storage: {{ .Values.appData.storageCap }}

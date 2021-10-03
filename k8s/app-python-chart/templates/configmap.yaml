@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: app-python-configmap
-data:
-  data.json: {{ .Files.Get "files/data.json" | quote }}
