@@ -9,7 +9,7 @@ from sanic.response import text
 app = Sanic('moscow-time-app')
 moscow_tz = timezone(timedelta(hours=3))
 
-VISITS_FILENAME = 'visits.txt'
+VISITS_FILENAME = 'data/visits.txt'
 
 @app.get("/")
 async def report_time(_request):

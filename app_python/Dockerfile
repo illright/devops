@@ -1,6 +1,7 @@
 FROM python:3-alpine
 
 RUN mkdir -p /app
+RUN mkdir -p /app/data
 WORKDIR /app
 RUN adduser -D runner && chown -R runner /app
 
