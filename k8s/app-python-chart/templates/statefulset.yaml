@@ -34,6 +34,23 @@ spec:
           volumeMounts:
             - name: data-volume
               mountPath: {{ .Values.appData.path }}
+            - name: workdir
+              mountPath: /workdir
+      initContainers:
+        - name: install
+          image: busybox
+          command:
+            - wget
+            - "-O"
+            - "/work-dir/index.html"
+            - http://info.cern.ch
+          volumeMounts:
+            - name: workdir
+              mountPath: "/work-dir"
+      dnsPolicy: Default
+      volumes:
+        - name: workdir
+          emptyDir: {}
   volumeClaimTemplates:
     - metadata:
         name: data-volume
